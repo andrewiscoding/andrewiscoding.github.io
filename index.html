@@ -3,44 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knuckleball - Heavy Dose</title>
+  <meta name="description" content="Heavy Dose - Power-pop-punk band bringing you honest, catchy music. Listen to our latest singles Hold On, Janie, and Knuckleball.">
+  <meta name="keywords" content="Heavy Dose, power-pop-punk, garage rock, rock band, Hold On, Janie, Knuckleball, punk rock">
+  <title>Heavy Dose</title>
+  <link rel="icon" href="hd-initials.png" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome Icons -->
   <style>
+    :root {
+      --main-bg-color: #121212;
+      --accent-color: #1db954; /* Spotify green */
+      --secondary-color: #222;
+      --text-color: #f4f4f4;
+      --highlight-color: #e63946; /* Red highlight */
+    }
+    
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #111;
-      color: #f4f4f4;
+      background-color: var(--main-bg-color);
+      color: var(--text-color);
       text-align: center;
+      line-height: 1.6;
     }
 
     header {
-      font-size: 3rem;
-      font-weight: bold;
-      margin: 20px 0 50px; /* Increased space below header */
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 20px 0 50px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: white;
+      text-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
     }
 
     .social-links {
-      margin-bottom: 40px; /* Space between social links and the two-column layout */
+      margin-bottom: 40px;
     }
 
     .social-links a {
-      font-size: 2rem;
-      color: #f4f4f4;
+      font-size: 2.2rem;
+      color: var(--text-color);
       margin: 0 15px;
       text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
     }
 
     .social-links a:hover {
-      color: #1db954; /* Spotify green hover effect */
+      color: var(--accent-color);
+      transform: scale(1.2);
     }
 
     .container {
       display: flex;
       max-width: 80%;
       margin: 0 auto;
-      gap: 60px; /* Wider spacing between columns */
+      gap: 60px;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeIn 1.5s ease-out forwards;
@@ -51,24 +69,42 @@
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 10px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     h2 {
       font-size: 1.5rem;
-      color: #bbb;
+      color: var(--accent-color);
       margin-bottom: 20px;
+      font-weight: 400;
     }
 
     h3 {
-      font-size: 1.5rem; /* Adjusted size */
-      margin: 20px 0 10px; /* Reduced space around headings */
+      font-size: 1.8rem;
+      margin: 20px 0 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h3:after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 3px;
+      background-color: var(--accent-color);
+      margin: 10px auto 0;
     }
 
     .bio p {
       font-size: 1.2rem;
-      line-height: 1.5;
+      line-height: 1.6;
+      text-align: left;
     }
 
     .album-art img {
@@ -76,25 +112,32 @@
       height: auto;
       border-radius: 10px;
       margin-bottom: 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
+    }
+    
+    .album-art img:hover {
+      transform: scale(1.03);
     }
 
     iframe {
-      margin-top: 10px; /* Reduced margin */
+      margin-top: 15px;
       border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     .youtube-video {
-      margin: 20px auto 40px; /* Reduced space */
+      margin: 30px auto 60px;
       max-width: 640px;
-      margin-bottom: 50px;
     }
 
     .gallery {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
-      margin-top: 10px; /* Reduced space */
+      margin: 25px auto;
       justify-content: center;
+      max-width: 80%;
     }
 
     .gallery img {
@@ -102,6 +145,12 @@
       object-fit: cover;
       max-width: 100%;
       height: auto;
+      transition: transform 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     .gallery img.small {
@@ -116,50 +165,157 @@
       width: 60%;
     }
 
+    .previous-releases {
+      max-width: 85%;
+      margin: 60px auto;
+      padding: 30px;
+      background: linear-gradient(145deg, #1a1a1a, #272727);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .releases-container {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .release {
+      flex: 1;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    
+    .release:hover {
+      transform: translateY(-5px);
+    }
+    
+    .release h2 {
+      position: relative;
+    }
+    
+    .latest-badge {
+      display: inline-block;
+      background-color: var(--highlight-color);
+      color: white;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      border-radius: 20px;
+      margin-left: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      vertical-align: middle;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 30px 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      font-size: 0.9rem;
+    }
+
     @keyframes fadeIn {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .social-links a {
+        font-size: 1.8rem;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .releases-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .gallery {
+        max-width: 90%;
+      }
+    }
   </style>
+  <!-- Preload fonts for better performance -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-family-montserrat/1.0.0/montserrat.min.css" rel="stylesheet">
 </head>
 <body>
   <header>Heavy Dose</header>
 
   <!-- Social Links Section -->
   <div class="social-links">
-    <a href="https://open.spotify.com/artist/315AH7RlOskO2dFrE8lWnL" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
-    <a href="https://www.instagram.com/heavydosemusic/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@HeavyDoseMusic/videos" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/315AH7RlOskO2dFrE8lWnL" target="_blank" title="Listen on Spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+    <a href="https://www.instagram.com/heavydosemusic/" target="_blank" title="Follow on Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@HeavyDoseMusic/videos" target="_blank" title="Watch on YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://music.apple.com/us/artist/heavy-dose/1741990948" target="_blank" title="Listen on Apple Music" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
   </div>
 
   <div class="container">
     <div class="bio">
-      <h1>"Knuckleball"</h1>
-      <h2>New Single Streaming Everywhere Now</h2>
-      <p>Heavy Dose brings you honest, catchy power-pop-punk music for the mosh pit or the morning commute. "Knuckleball" captures the raw energy of heartbreak and the catharsis of punk rock.</p>
-      <iframe src="https://open.spotify.com/embed/track/62JRtCdzHk0qX47STppfxC?utm_source=generator" 
+      <h1>"Hold On" <span class="latest-badge">Latest</span></h1>
+      <h2>Streaming Everywhere Now</h2>
+      <p>Our new single is OUT NOW! 💔 "Hold On" is about looking back on a severed relationship, fixating on its flaws, and conjuring up rationalizations about why it was destined to fail. Recorded/mixed by the legendary Brian DiMeglio and mastered by the amazing Jesse Cannon!</p>
+      <iframe src="https://open.spotify.com/embed/track/3S4iQe9FhwFGpHJicUodTs?utm_source=generator" 
               width="100%" height="80" frameBorder="0" 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     </div>
     <div class="album-art">
-      <img src="HD-grey.png" alt="Album Art">
+      <img src="HD-blue.png" alt="Heavy Dose Hold On Album Art">
     </div>
   </div>
 
-  <h3>Watch the Music Video</h3>
+  <h3>Watch our Music Videos</h3>
   <div class="youtube-video">
-    <iframe width="100%" height="360" src="https://www.youtube.com/embed/OnFMPk5hCnA" 
+    <iframe width="100%" height="360" src="https://www.youtube.com/embed/w7PbZ3k3UTQ" 
             frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen></iframe>
+            allowFullScreen title="Heavy Dose - Janie Music Video"></iframe>
+  </div>
+
+  <div class="previous-releases">
+    <h3>Previous Releases</h3>
+    
+    <div class="releases-container">
+      
+      <div class="release">
+        <h2>"Knuckleball"</h2>
+        <p>Our debut single "Knuckleball" tells the story of of one partner abruptly ending things while the other struggles to accept the reality of their separation.</p>
+        <iframe src="https://open.spotify.com/embed/track/62JRtCdzHk0qX47STppfxC?utm_source=generator" 
+                width="100%" height="80" frameBorder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                title="Heavy Dose - Knuckleball on Spotify"></iframe>
+      </div>
+
+      <div class="release">
+        <h2>"Janie"</h2>
+        <p>Our second single "Janie" is a about letting your romantic partner down enough times to produce serious doubts about the strength of the relationship.</p>
+        <iframe src="https://open.spotify.com/embed/track/6rbaqBcFUk4kTOG53InHau?utm_source=generator" 
+                width="100%" height="80" frameBorder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                title="Heavy Dose - Janie on Spotify"></iframe>
+      </div>
+
+    </div>
   </div>
 
   <h3>Gallery</h3>
   <div class="gallery">
-    <img src="pic1.jpg" alt="Gallery Image 1" class="small">
-    <img src="pic2.jpg" alt="Gallery Image 2" class="medium">
+    <img src="pic1.jpg" alt="Heavy Dose band performing live" class="small">
+    <img src="pic2.jpg" alt="Heavy Dose band photoshoot" class="medium">
   </div>
+  
+  <footer>
+    <p>&copy; 2025 Heavy Dose. All rights reserved.</p>
+    <p>For bookings and inquiries: <a href="mailto:heavydose.music@gmail.com">heavydose.music@gmail.com</a></p>
+  </footer>
 </body>
 </html>
-
