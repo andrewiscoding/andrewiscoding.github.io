@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Heavy Dose - Power-pop-punk band bringing you honest, catchy music. Listen to our latest singles Hold On, Janie, and Knuckleball.">
-  <meta name="keywords" content="Heavy Dose, power-pop-punk, garage rock, rock band, Hold On, Janie, Knuckleball, punk rock">
+  <meta name="description" content="Heavy Dose - Power-pop-punk band bringing you honest, catchy music. Listen to our latest singles Red Eyes, Hold On, Janie, and Knuckleball.">
+  <meta name="keywords" content="Heavy Dose, power-pop-punk, garage rock, rock band, Red Eyes, Hold On, Janie, Knuckleball, punk rock">
   <title>Heavy Dose</title>
   <link rel="icon" href="hd-initials.png" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome Icons -->
@@ -176,12 +176,16 @@
 
     .releases-container {
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
       margin-top: 20px;
+      justify-content: center;
     }
 
     .release {
       flex: 1;
+      min-width: 250px;
+      max-width: 400px;
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 10px;
@@ -207,6 +211,16 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       vertical-align: middle;
+    }
+    
+    .new-release-glow {
+      animation: glowing 2s infinite;
+    }
+    
+    @keyframes glowing {
+      0% { box-shadow: 0 0 10px rgba(230, 57, 70, 0.7); }
+      50% { box-shadow: 0 0 20px rgba(230, 57, 70, 0.9); }
+      100% { box-shadow: 0 0 10px rgba(230, 57, 70, 0.7); }
     }
 
     footer {
@@ -262,15 +276,15 @@
 
   <div class="container">
     <div class="bio">
-      <h1>"Hold On" <span class="latest-badge">Latest</span></h1>
+      <h1>"Red Eyes" <span class="latest-badge">Latest</span></h1>
       <h2>Streaming Everywhere Now</h2>
-      <p>Our new single is OUT NOW! 💔 "Hold On" is about looking back on a severed relationship, fixating on its flaws, and conjuring up rationalizations about why it was destined to fail. Recorded/mixed by the legendary Brian DiMeglio and mastered by the amazing Jesse Cannon!</p>
-      <iframe src="https://open.spotify.com/embed/track/3S4iQe9FhwFGpHJicUodTs?utm_source=generator" 
+      <p>Our new single is OUT NOW! 💔 "Red Eyes" is a raw, emotional journey through loss and isolation. This intense track explores the mental toll of a relationship's end and the struggle to process overwhelming emotions. Recorded/mixed by the legendary Brian DiMeglio and mastered by the amazing Jesse Cannon!</p>
+      <iframe src="https://open.spotify.com/track/5LJMli3Pwo2S5KkwsLIknG?si?utm_source=generator" 
               width="100%" height="80" frameBorder="0" 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     </div>
     <div class="album-art">
-      <img src="HD-blue.png" alt="Heavy Dose Hold On Album Art">
+      <img src="HD-magenta.png" alt="Heavy Dose Red Eyes Album Art">
     </div>
   </div>
 
@@ -285,25 +299,32 @@
     <h3>Previous Releases</h3>
     
     <div class="releases-container">
-      
-      <div class="release">
-        <h2>"Knuckleball"</h2>
-        <p>Our debut single "Knuckleball" tells the story of of one partner abruptly ending things while the other struggles to accept the reality of their separation.</p>
-        <iframe src="https://open.spotify.com/embed/track/62JRtCdzHk0qX47STppfxC?utm_source=generator" 
+      <div class="release new-release-glow">
+        <h2>"Hold On"</h2>
+        <p>"Hold On" is about looking back on a severed relationship, fixating on its flaws, and conjuring up rationalizations about why it was destined to fail.</p>
+        <iframe src="https://open.spotify.com/embed/track/3S4iQe9FhwFGpHJicUodTs?utm_source=generator" 
                 width="100%" height="80" frameBorder="0" 
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                title="Heavy Dose - Knuckleball on Spotify"></iframe>
+                title="Heavy Dose - Hold On on Spotify"></iframe>
       </div>
-
+      
       <div class="release">
         <h2>"Janie"</h2>
-        <p>Our second single "Janie" is a about letting your romantic partner down enough times to produce serious doubts about the strength of the relationship.</p>
+        <p>Our second single "Janie" is about letting your romantic partner down enough times to produce serious doubts about the strength of the relationship.</p>
         <iframe src="https://open.spotify.com/embed/track/6rbaqBcFUk4kTOG53InHau?utm_source=generator" 
                 width="100%" height="80" frameBorder="0" 
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 title="Heavy Dose - Janie on Spotify"></iframe>
       </div>
 
+      <div class="release">
+        <h2>"Knuckleball"</h2>
+        <p>Our debut single "Knuckleball" tells the story of one partner abruptly ending things while the other struggles to accept the reality of their separation.</p>
+        <iframe src="https://open.spotify.com/embed/track/62JRtCdzHk0qX47STppfxC?utm_source=generator" 
+                width="100%" height="80" frameBorder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                title="Heavy Dose - Knuckleball on Spotify"></iframe>
+      </div>
     </div>
   </div>
 
